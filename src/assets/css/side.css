@@ -1,0 +1,194 @@
+
+.side {position: absolute; top: 0px; width: 600px; right: 0px; height: 100%; transition: all 0.5s; background-color: white; padding: 0px 20px;} /* border-radius: 25px; box-shadow: 0px 0px 10px 5px rgb(0 0 0 / 30%);  */
+.canvas-page .side {z-index: 1;}
+.side.open {right: 0px;}
+.side * {letter-spacing: -0.1px; line-height: 100%;}
+.side .tooltip {position: absolute; padding: 10px 15px; background-color: white; border-radius: 10px; top: 50vh; right: 300px; width: 250px; opacity: 0; transition: all 0.5s;}
+.side .tooltip.active {opacity: 1; right: 660px;}
+.side .tooltip * {font-size: 16px; line-height: 150%;}
+.side .tooltip .title {font-weight: 700;}
+.side .tooltip .mt-10 {margin-top: 10px;}
+.side .tooltip .bold {font-weight: 700; cursor: pointer;}
+
+.side-outer {padding: 20px; position: relative;}
+.side-header { padding-bottom: 30px; padding-top: 56px; position: relative;}
+.side-outer .outer-line {display: flex; font-size: 38px;  line-height: 100%;}
+.side-outer .outer-line * {line-height: 100%;}
+.side-outer .right {flex: 1; text-align: right;}
+.side-outer .outer-price {position: absolute; right: 20px; bottom: 33px; font-size: 38px; color: rgba(0, 0, 0, 0.8);}
+/* .side-header .header-top {margin-bottom: 5px;} */
+.side-header .header-top {margin-bottom: 10px;}
+.side-header .header-top label { font-family: 'mainThin'; font-size: 38px; font-weight: 500;}
+.side-header .header-bottom {text-transform: uppercase;}
+.side-header .outer-line {height: 38px;}
+
+.side-gap {height: 10px; width: 100%; background-color: white; }
+.side-wrapper {position: relative; background-color: white; width: calc(100% - 5px); height: calc(100% - 280px);}
+.side .arrow {position: absolute; top: 10px; left: -60px; cursor: pointer; transform: rotate(180deg); transition: all 0.3s;}
+.side.open .arrow {left: 0px; transform: rotate(0deg);}
+
+.side .part .part-title { margin: 0px 10px; padding: 20px 35px; cursor: pointer; border-top: 1px solid #D3D3D3;  border-bottom: 1px solid #D3D3D3; display: flex; align-items: center;}
+.side .part.color-part .part-title { border: none;}
+.side .part .part-title label { font-family: 'mainLight'; font-size: 24px; margin-left: 20px; cursor: pointer;}
+.side .part .part-title img {width: 10px; transition: all 0.5s;}
+.side .part.open .part-title img {transform: rotate(90deg);}
+
+.side .part .part-content {max-height: 0px; transition: all 0.5s; overflow-y: hidden; overflow-x: hidden; position: relative;}
+.side .part.color-part.open .part-content {max-height: 150px;}
+.side .part.front-part.open .part-content {max-height: 520px;}
+.side .part.option-part.open .part-content {max-height: 630px;}
+.side .part.rear-part.open .part-content {max-height: 165px;}
+.side .part.brake-part.open .part-content {max-height: 165px;}
+.side .part.battery-part.open .part-content {max-height: 165px;}
+.side .part.logo-part.open .part-content {max-height: 410px;}
+.side .part.power-part.open .part-content {max-height: 290px;}
+.side .part.simRear-part.open .part-content {max-height: 290px;}
+.side .part.simHead-part.open .part-content {max-height: 400px;}
+
+.side .part .part-content .option-item {height: 115px; display: flex; border-bottom: 1px solid #E2E2E2; cursor: pointer; border-radius: 10px; border-left: 10px solid white; border-right: 10px solid white; transition: all 0.3s; background-color: white;}
+.side .part .part-content .option-item:hover {background-color: #E2E2E2;}
+.side .part .part-content .option-item.disable {opacity: 0.5; cursor: default; display: none;}
+.side .part .part-content .option-item .option-img {height: 100%; width: 195px; margin-right: 10px; display: flex; justify-content: center; align-items: center;}
+.side .part .part-content .option-item .option-img img { max-width: 100%; max-height: 100%;}
+.side .part .part-content .option-item.active {border-left-color: rgba(0, 0, 0, 0.8); border-right-color: rgba(0, 0, 0, 0.8);}
+.side .part .part-content .option-item .option-label {flex: 1; position: relative;}
+.side .part .part-content .option-item .option-label .sub-title { margin-top: 15px; font-family: 'mainLightExt'; font-size: 18px;}
+.side .part .part-content .option-item .option-label .label {margin-top: 15px; font-family: 'mainLight'; font-size: 18px;}
+.side .part .part-content .option-item .option-label .price {position: absolute; top: 5px; right: 10px; font-size: 12px;}
+.side .part .part-content .price-line {display: flex; padding: 15px 45px;}
+.side .part .part-content .price-line label {font-family: 'mainLight'; font-size: 18px;}
+.side .part .part-content .price-line label.left {font-family: 'mainLightExt'; font-weight: 700; text-transform: uppercase;}
+.side .part .part-content .price-line .right {flex: 1; text-align: right;}
+
+.side .part.color-part .color-wrapper { padding: 8px 0px; }
+.side .part.color-part .color-wrapper .color-item { height: 70px; width: 70px; border-radius: 50%; border: 6px solid white; cursor: pointer; transition: all 0.3s; margin: auto;}
+.side .part.color-part .color-wrapper .color-item:hover{ transform: scale(1.2);} /* z-index: 1; */
+.side .part.color-part .color-wrapper .color-item.active{ border-color: rgba(0, 0, 0, 0.8);}
+
+.side .part .part-content .button {flex-direction: column; background-color: white; color: #108CCA; margin: 10px; border: 2px solid #108CCA; width: 180px; padding: 12px;}
+.side .part .part-content .button:hover {background-color: #DDDDDD;}
+.side .part .part-content .button.active {background-color: #108CCA; color: white;}
+.side .part .part-content .button.disable:hover {background-color: #FFFFFF; color: #108CCA;}
+
+.side .part.hide {display: none;}
+
+.side .part.logo-part .part-content .option-item {cursor: default;}
+.side .part.logo-part .part-content .option-item #logoFile { margin: 10px; font-size: 18px; width: 300px;}
+.side .part.logo-part .part-content .option-item .button {padding: 5px 10px; width: 120px; font-size: 18px; margin-top: 5px;}
+
+.side .part.logo-part .part-content .option-item.logo-custom-option { height: 180px; flex-direction: column; padding: 0px 20px; position: relative;}
+.side .part.logo-part .part-content .logo-custom-option .disable-mask { position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.5); display: none;}
+.side .part.logo-part .part-content .logo-custom-option .disable-mask.active { display: block;}
+.side .part.logo-part .logo-custom-option .custom-part {margin-top: 10px;}
+.side .part.logo-part .logo-custom-option .custom-part .custom-title {font-size: 16px; font-weight: 700;}
+.side .part.logo-part .logo-custom-option .custom-part .custom-content .custom-line {display: flex; align-items: center; margin: 7px 0px;}
+.side .part.logo-part .logo-custom-option .custom-part .custom-content .custom-line label {width: 100px; margin-right: 20px;}
+.side .part.logo-part .logo-custom-option .custom-part .custom-content .custom-line input {flex: 1;}
+
+.side .part.logo-part .part-content .logo-option-over {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.5);}
+
+.side-footer { border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;}
+.side-footer .outer-line { width: 90%; padding: 13px; border-radius: 31px; font-family: 'mainSemiBold'; font-size: 30px; border: 3px solid #0096DA; cursor: pointer; transition: all 0.3s;}
+.side-footer .outer-line:hover { background-color: #0096DA; color: white;}
+
+.small-scale .side {width: 400px; padding: 0px 15px;}
+.small-scale .side-outer { padding: 10px; }
+.small-scale .side-outer .outer-line {font-size: 28px;}
+.small-scale .side-header { padding-bottom: 20px; padding-top: 40px; }
+.small-scale .side-header .header-top label {font-size: 28px;}
+.small-scale .side-header .outer-line {height: 28px;}
+.small-scale .side-outer .outer-price {font-size: 28px; bottom: 22px;}
+
+.small-scale .side-wrapper {height: calc(100% - 215px);}
+.small-scale .side .part .part-title {padding: 15px;}
+.small-scale .side .part .part-title label {margin-left: 10px 15px; font-size: 20px;}
+
+.small-scale .side .part .part-content .option-item {height: 100px;}
+.small-scale .side .part .part-content .option-item .option-img {width: 150px;}
+.small-scale .side .part .part-content .option-item .option-label .sub-title {margin-top: 10px; font-size: 16px;}
+.small-scale .side .part .part-content .option-item .option-label .label {margin-top: 10px; font-size: 15px;}
+.small-scale .side .part .part-content .price-line {padding: 10px 25px;}
+.small-scale .side .part .part-content .price-line label {font-size: 16px;}
+
+.small-scale .side .part.color-part .color-wrapper .color-item {width: 54px; height: 54px; border-width: 4px;}
+.small-scale .side .part.logo-part .part-content .option-item #logoFile {font-size: 14px; width: 180px;}
+.small-scale .side .part.logo-part .part-content .option-item .button {font-size: 14px;}
+
+.small-scale .side .part.color-part.open .part-content {max-height: 120px;}
+.small-scale .side .part.front-part.open .part-content {max-height: 440px;}
+.small-scale .side .part.option-part.open .part-content {max-height: 545px;}
+.small-scale .side .part.rear-part.open .part-content {max-height: 140px;}
+.small-scale .side .part.brake-part.open .part-content {max-height: 140px;}
+.small-scale .side .part.battery-part.open .part-content {max-height: 140px;}
+.small-scale .side .part.logo-part.open .part-content {max-height: 380px;}
+.small-scale .side .part.power-part.open .part-content {max-height: 270px;}
+.small-scale .side .part.simRear-part.open .part-content {max-height: 270px;}
+.small-scale .side .part.simHead-part.open .part-content {max-height: 310px;}
+
+.small-scale .side-footer .outer-line {padding: 10px;}
+
+.small-scale .side .tooltip {right: 100px; width: 250px;}
+.small-scale .side .tooltip.active {opacity: 1; right: 440px;}
+
+
+.mobile .side-outer {padding: 10px;}
+.mobile .side-outer .outer-line {font-size: 24px;}
+.mobile .side-header .header-top {margin-bottom: 5px; margin-top: 5px;}
+.mobile .side-header .header-top label {font-size: 24px;}
+.mobile .side-header .outer-line {height: 24px;}
+.mobile .side-outer .outer-price {font-size: 24px; bottom: 13px;}
+
+.mobile .side { padding: 0; padding-left: 5px;}
+
+.mobile .side .part .part-title {padding: 10px 15px;}
+.mobile .side .part .part-title label {font-size: 19px;}
+.mobile .side .part.color-part .color-wrapper .color-item {width: 46px; height: 46px; border-width: 4px;}
+
+.mobile .side .part .part-content .option-item {height: 90px;}
+.mobile .side .part .part-content .option-item .option-img {width: 135px;}
+
+.mobile .side .part .part-content .option-item .option-label .sub-title {margin-top: 15px; font-size: 14px;}
+.mobile .side .part .part-content .option-item .option-label .label {margin-top: 8px; font-size: 12px;}
+.mobile .side .part .part-content .option-item .option-label .price {top: 2px;}
+.mobile .side .part .part-content .price-line {padding: 10px 25px;}
+.mobile .side .part .part-content .price-line label {font-size: 14px;}
+
+.mobile .side .part.color-part .part-title {border-top: 1px solid #D3D3D3;}
+
+.mobile .side .part.logo-part .part-content .option-item #logoFile {font-size: 12px;}
+.mobile .side .tooltip {width: 180px;}
+.mobile .side .tooltip * {font-size: 12px;}
+
+.mobile .side .part.color-part.open .part-content {max-height: 120px;}
+.mobile .side .part.front-part.open .part-content {max-height: 440px;}
+.mobile .side .part.option-part.open .part-content {max-height: 545px;}
+.mobile .side .part.rear-part.open .part-content {max-height: 140px;}
+.mobile .side .part.brake-part.open .part-content {max-height: 140px;}
+.mobile .side .part.battery-part.open .part-content {max-height: 140px;}
+.mobile .side .part.logo-part.open .part-content {max-height: 380px;}
+.mobile .side .part.power-part.open .part-content {max-height: 270px;}
+
+.mobile .side-footer .outer-line {padding: 8px; font-size: 20px; border-radius: 20px;}
+
+@media (orientation: portrait) {
+	.mobile .side { width: calc(100vw - 5px); height: 40%; top: 60%; overflow-y: auto; }
+	.mobile .side .side-wrapper {height: auto;}
+	.mobile.iPad .side { width: 600px; margin: 0px calc(50% - 300px);}
+	.mobile .side .tooltip {display: none;}
+	/* .mobile .side .tooltip.active {border: 1px solid; right: calc(50vw - 105px);} */
+}
+
+@media (orientation: landscape) {
+	.mobile .side { width: 40vw; right: 0px;}
+	.mobile.iPad .side { width: 400px;}
+	.mobile .side-outer .outer-line {font-size: 20px;}
+	.mobile .side-outer .outer-price {font-size: 20px; bottom: 12px;}
+	.mobile .side-header .header-top label {font-size: 20px;}
+	.mobile .side-wrapper {height: calc(100% - 130px);}
+	.mobile .side .part .part-title {padding: 5px 10px;}
+	.mobile .side .part .part-content .option-item .option-img {width: 100px;}
+	.mobile .side .part.color-part .color-wrapper .color-item {width: 35px; height: 35px; border-width: 2px;}
+	.mobile .side .part .part-content .option-item {border-radius: 6px; border-left-width: 6px; border-right-width: 6px;}
+	.mobile .side .part .part-content .option-item .option-label .price {right: 5px;}
+	.mobile .side .tooltip.active {right: calc(40vw + 20px);}
+}

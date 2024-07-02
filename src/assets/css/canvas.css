@@ -1,0 +1,77 @@
+
+.canvas { position: absolute; z-index: -1; transition: left 0.5s; }
+
+.set-item {position: absolute; z-index: 1; left: 20px; cursor: pointer; width: 70px; height: 70px; border-radius: 50%; box-shadow: 0px 0px 10px 5px rgb(0 0 0 / 20%); display: flex; justify-content: center; align-items: center; transition: all 0.3s;}
+.set-item:hover {box-shadow: 0px 0px 15px 10px rgb(0 0 0 / 40%);}
+.set-item .circle {width: 50px; height: 50px; border-radius: 50%; border: 5px solid rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; background-color: white;}
+.set-item .circle img {max-width: 30px; max-height: 30px; opacity: 0.8;}
+.set-item.set-back {top: 50px;}
+.set-item.set-camera {bottom: 150px; left: calc(100% - 740px);}
+.set-item.set-share {bottom: 50px; left: calc(100% - 740px);}
+.set-item.set-light {bottom: 250px;}
+.set-item.set-rotate {bottom: 150px;}
+.set-item.set-sun {bottom: 50px;}
+.set-item.disable {opacity: 0.5; cursor: default;}
+.set-item.disable:hover {box-shadow: none;}
+
+.setting-pano {position: absolute; z-index: 1; left: 120px; top: 20px; display: flex; align-items: center; display: none;}
+.setting-pano .pano-item {margin: 8px; width: 80px; height: 40px; cursor: pointer; background-size: contain; text-shadow: 1px 1px white; font-size: 32px; color: blue; font-weight: 700; border: 2px solid black; transition: all 0.3s; opacity: 0.8;}
+.setting-pano .pano-item.active {border-color: red; transform: scale(1.15); opacity: 1; color: red;}
+.setting-pano .pano-item:hover {transform: scale(1.15); opacity: 1;}
+.setting-pano input {margin: 0px 20px; width: 150px;}
+
+.set-item.set-rotate .circle img {border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.8) ; padding: 4px;}
+.set-item.set-rotate.rotate .circle {animation-name: wheelRotate; animation-duration: 5s; animation-iteration-count: infinite; animation-timing-function: linear;}
+@keyframes wheelRotate {
+	0%  {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+.logo-wrapper {position: absolute; width: 0; height: 0;}
+.logo-wrapper .logo-inner {position: relative; padding: 10px; padding-right: 25px; background-color: rgba(255, 255, 255, 0.5); border-radius: 8px; transition: all 0.5s;}
+.logo-wrapper.active .logo-inner {margin-top: -150px;}
+.logo-wrapper .control-item {margin: 10px; padding: 5px; background-color: white; border-radius: 4px; border: 2px solid white;}
+.logo-wrapper .control-item.active {border-color: red;}
+.logo-wrapper .control-item img {width: 40px; height: 40px;}
+.logo-wrapper .logo-inner .close {position: absolute; top: 2px; right: 2px; padding: 2px; background-color: black; width: 20px; height: 20px; border-radius: 11px; cursor: pointer;}
+
+.small-scale .set-item {width: 60px; height: 60px;}
+.small-scale .set-item .circle {width: 44px; height: 44px;}
+.small-scale .set-item .circle img {width: 27px; height: 27px;}
+
+.small-scale .set-item.set-back {top: 40px;}
+.small-scale .set-item.set-camera {bottom: 120px; left: calc(100% - 510px);}
+.small-scale .set-item.set-share {bottom: 40px; left: calc(100% - 510px);}
+.small-scale .set-item.set-light {bottom: 200px;}
+.small-scale .set-item.set-rotate {bottom: 120px;}
+.small-scale .set-item.set-sun {bottom: 40px;}
+
+.mobile .set-item {width: 42px; height: 42px; left: 15px;}
+.mobile .set-item .circle {width: 32px; height: 32px; border-width: 4px;}
+.mobile .set-item .circle img {max-width: 25px; max-height: 25px;}
+
+.mobile .set-item.set-back {top: 15px;}
+.mobile .set-item {box-shadow: none;}
+@media (orientation: portrait) {
+	.mobile .set-item.set-light {bottom: calc(40% + 15px);}
+	.mobile .set-item.set-rotate {bottom: calc(40% + 15px); left: 80px;}
+	.mobile .set-item.set-sun {bottom: calc(40% + 15px); left: 140px;}
+	.mobile .set-item.set-camera {bottom: calc(40% + 15px); left: 220px;}
+	.mobile .set-item.set-share {bottom: calc(40% + 15px); left: 300px;}
+}
+
+@media (orientation: landscape) {
+	/* .mobile .set-item.set-light {bottom: 140px;}
+	.mobile .set-item.set-rotate {bottom: 80px;}
+	.mobile .set-item.set-sun {bottom: 20px;} */
+	.mobile .set-item.set-light {bottom: 15px;}
+	.mobile .set-item.set-rotate {bottom: 15px; left: 80px;}
+	.mobile .set-item.set-sun {bottom: 15px; left: 140px;}
+	.mobile .set-item.set-camera {bottom: 15px; left: 200px;}
+	.mobile .set-item.set-share {bottom: 15px; left: 260px;}
+}
+
+.canvas .img-test-wrapper {position: absolute; top: 50px; left: 100px;}
+.canvas .img-test-wrapper .night-item {margin: 0px 5px; width: 50px; height: 50px; border-radius: 4px; border: 1px solid; background-color: white; font-size: 20px; cursor: pointer;}
+.canvas .img-test-wrapper .night-item.active {color: red; font-weight: 700;}
+.canvas .img-test-wrapper .sel-deg {color: white; font-size: 24px; margin-left: 10px;}

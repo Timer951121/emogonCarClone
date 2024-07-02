@@ -1,0 +1,23 @@
+
+.start .outer-wrapper {width: 1500px; height: 700px; position: relative;}
+.start .outer-wrapper .inner-wrapper {position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 1; transition: all 0.5s;}
+.start .outer-wrapper .inner-wrapper.trans {opacity: 0.5;}
+
+.start .inner-wrapper.type-select {display: none;}
+.start .inner-wrapper.type-select.show {display: initial;}
+.start .type-wrapper {display: flex; flex-direction: column; margin-top: 50px; width: 20%; height: calc(100% - 100px); justify-content: center; background-color: rgba(0,0,0,0.3);}
+.start .type-button {width: 100%; padding: 10px 0px; text-align: center; color: white; background-color: #108CCA; margin: 20px 0px; cursor: pointer; transition: all 0.3s;}
+.start .type-button:hover {background-color: #123BC2;}
+
+.start .detail-select .group-bar {position: absolute; width: 60%; height: 50px; background-color: #108CCA; color: white; box-shadow: rgba(0,0,0,0.8) 0 0 10px; z-index: -1;}
+.start .detail-select .group-bar.top-bar { top: 0; left: 0; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+.start .detail-select .group-bar.bottom-bar {bottom: 0px; left: 40%; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+
+.start .detail-select .content {width: 100%; height: calc(100% - 100px); margin-top: 50px; display: flex; box-shadow: rgba(0,0,0,0.5) 0 0 10px; z-index: 10; background-color: white;}
+.start .detail-select .content .part-item {flex: 1; border: 1px solid #DDDDDD; cursor: pointer;}
+.start .detail-select .content .part-item .part-img {width: 100%; height: 450px; overflow: hidden;}
+.start .detail-select .content .part-item .part-img img {max-width: 100%; max-height: 100%; opacity: 0.7; transition: all 0.3s;}
+.start .detail-select .content .part-item:hover .part-img img {transform: scale(1.2); opacity: 1;}
+.start .detail-select .content .part-item .part-text {margin: 10px 20px;}
+.start .detail-select .content .part-item .part-text .part-title {margin-bottom: 10px;}
+.start .detail-select .content .part-item .part-text .part-description {color: #444444; font-size: 12px;}

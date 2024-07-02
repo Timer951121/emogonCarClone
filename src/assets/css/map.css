@@ -1,0 +1,68 @@
+
+.map .map-side {flex: 1; height: 100%;}
+.map .text-side {flex-direction: column;}
+.map .text-side .main-title {font-size: 32px; margin-bottom: 50px;}
+.map .text-side .body-wrapper { position: relative; height: 50vh; width: 17vh; flex-direction: column;}
+.map .text-side .body-wrapper .power-wrapper {flex-direction: column;}
+.map .text-side .body-wrapper .main-body { position: absolute; height: 100%;}
+.map .text-side .body-wrapper .power-row { margin-top: 20px;}
+.map .text-side .body-wrapper .power-item { width: calc(50% - 30px); margin: 0px 8px; position: relative; transition: all 0.3s; cursor: pointer;}
+.map .text-side .body-wrapper .power-item img { width: 100%; opacity: 0.3; transition: all 0.3s;}
+.map .text-side .body-wrapper .power-item img.active { opacity: 1;}
+
+.map .text-side .labels {flex-direction: column; margin-top: 20px;}
+.map .text-side .labels label {font-size: 24px;}
+.map .text-side .labels .price {font-family: mainLight;}
+
+.map .text-side .continue {font-size: 24px; padding: 5px 80px; border-radius: 22px; border: 2px solid; cursor: pointer; margin-top: 20px; transition: all 0.3s;}
+.map .text-side .continue:hover {background-color: #CCCCCC;}
+
+.map .car-side {background-size: cover; background-position: bottom; position: relative;}
+.map .car-side .wrapper {position: absolute; bottom: 40%; left: 45%; width: 0; height: 0;}
+.map .car-side .car-wrapper img {transform: rotate(15deg);}
+.map .car-side .range {border-radius: 50%; background-color: rgba(16, 140, 202, 0.4); border: 5px solid #108CCA; transition: all 0.5s; transform: translate(-50%, -50%);}
+.map .car-side .range0 {width: 16vw; height: 16vw;}
+.map .car-side .range1 {width: 24vw; height: 24vw;}
+.map .car-side .range2 {width: 32vw; height: 32vw;}
+.map .car-side .range3 {width: 40vw; height: 40vw;}
+.map .car-side .range.dash {background: none; border: 2px dashed grey; transform: translate(-50%, -50%);}
+
+.map .car-side .wrapper.range-wrapper.hide {display: none;}
+
+@keyframes rangepulse {
+	0%   {transform: scale(0.1); opacity: 1;}
+	100% {transform: scale(1); opacity: 0;}
+}
+.map .car-side .range.pulse {background: none; border: none;}
+.map .car-side .range .pulse-inner {width: 100%; height: 100%; border-radius: 50%; background: rgba(16, 140, 202, 0.7); animation-name: rangepulse; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: ease-out;}
+
+.mobile .map .text-side .main-title {font-size: 24px; margin-bottom: 0px; margin-left: 30px;}
+.mobile .map .text-side .body-wrapper {height: calc(50% - 80px); margin: 10px 0px; width: 100%;}
+.mobile .map .text-side .body-wrapper .main-body {display: none;}
+.mobile .map .text-side .body-wrapper .power-wrapper {flex-direction: row;}
+.mobile .map .text-side .body-wrapper .power-row {margin: 0; width: 35%;}
+.mobile .map .text-side .body-wrapper .row1 .power-row {width: 70%;}
+.mobile .map .text-side .body-wrapper .power-row .power-item {width: initial;}
+.mobile .map .text-side .labels { margin-top: 10px;}
+.mobile .map .text-side .labels label {font-size: 20px;}
+.mobile .map .text-side .continue { font-size: 20px; margin-top: 10px; padding: 2px 40px; border-radius: 18px;}
+.mobile .map .car-side .car-wrapper img {transform: rotate(15deg) scale(0.6);}
+
+@media (orientation: portrait) {
+	.mobile .map{flex-direction: column; height: 100%;}
+	.mobile .map .map-side {width: 100%; height: 50%;}
+	.mobile .map .text-side .labels { margin: 0;}
+	.mobile .map .text-side .labels label {font-size: 18px;}
+	.mobile .map .text-side .continue { font-size: 16px; padding: 5px 40px; border-radius: 20px;}
+
+	.mobile .map .car-side .range0 {width: 32vw; height: 32vw;}
+	.mobile .map .car-side .range1 {width: 48vw; height: 48vw;}
+	.mobile .map .car-side .range2 {width: 64vw; height: 64vw;}
+	.mobile .map .car-side .range3 {width: 80vw; height: 80vw;}
+	.mobile .map .car-side .car-wrapper img {transform: rotate(15deg) scale(0.6);}
+}
+
+@media (orientation: landscape) {
+	.mobile .map{flex-direction: row; width: 100%;}
+	.mobile .map .map-side {width: 50%; height: 100%;}
+}

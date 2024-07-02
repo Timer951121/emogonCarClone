@@ -1,0 +1,69 @@
+
+@font-face { font-family: mainFont; src: url('../font/Poppins-Regular.ttf'); }
+@font-face { font-family: mainLight; src: url('../font/Poppins-Light.ttf'); }
+@font-face { font-family: mainLightExt; src: url('../font/Poppins-ExtraLight.ttf'); }
+@font-face { font-family: mainThin; src: url('../font/Poppins-Thin.ttf'); }
+@font-face { font-family: mainSemiBold; src: url('../font/Poppins-SemiBold.ttf'); }
+* { font-family: mainFont; letter-spacing: 0.6px;}
+body { overflow: hidden; margin: 0; padding: 0; }
+.page-wrapper { position: fixed; overflow: hidden; }
+.back-board { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; z-index: -1; overflow: hidden; background-color: white;}
+.back-board.portrait { background-color: rgba(0, 0, 0, 0.8); opacity: 1; z-index: 3; color: white; font-size: 24px; font-weight: 700; }
+
+.back-board.active { opacity: 1; z-index: 1; }
+
+.flex {display: flex; align-items: center; justify-content: center;}
+
+.loading { transition: all 0.5s;}
+.loading-start { background-color: white; opacity: 1;}
+.loading-start.trans {opacity: 0;}
+.loading .loading-wrapper { transition: all 0.5s;}
+.loading-logo .loading-circle { position: absolute; top: calc(50% - 60px); left: calc(50% - 60px); border: 16px solid #f3f3f3; border-top: 16px solid #3498db; border-radius: 50%; width: 90px; height: 90px; animation: spin 2s linear infinite; }
+.loading-logo .loading-circle.grey { border: 6px solid #444; border-top: 6px solid white; }
+
+
+.loading .loading-wrapper {width: 240px; flex-direction: column;}
+.loading .loading-wrapper .loading-label { margin-left: 50px; margin-bottom: 30px;}
+.loading .loading-wrapper .loading-icon {height: 250px; width: 100%; position: relative; margin-bottom: 30px; align-items: flex-start;}
+.loading .loading-wrapper .loading-icon img {position: absolute; left: 0; top: 0; height: 100%; width: 100%;}
+.loading .loading-wrapper .loading-icon .center-pro {width: 80px; height: 180px; background-color: white; z-index: 1; transition: all 0.2s;}
+/* .loading .loading-wrapper .loading-icon .circlePro {position: absolute; transform: rotate(-37deg); }
+.loading .loading-wrapper .loading-icon .circlePro .main-circle {stroke: #0095d9; fill: transparent; transition: all 0.1s; display: none;}
+.loading .loading-wrapper .loading-icon .circlePro .main-circle.active{display: block;}
+.loading .loading-wrapper .loading-icon .circlePro .side-circle {fill: #0095d9; stroke: none;}
+.loading .loading-wrapper .loading-icon .circlePro .end-circle {display: none;}
+.loading .loading-wrapper .loading-icon .circlePro .end-circle.active {display: block;} */
+.loading .loading-wrapper .label {margin: 4px 0px; opacity: 0.8;}
+
+.mobile .loading .loading-wrapper {transform: scale(0.8);}
+
+.loading-logo {display: none;}
+.loading-logo.active {background-color: rgba(0, 0, 0, 0.4); display: block;}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes arrowAnimate {
+	0% { transform:translateX(30px); }
+	100% { transform:translateX(-30px); }
+}
+
+.top-shadow {position: fixed; top: 0; left: 0; height: 30px; width: 100vw; background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)); z-index: 2;}
+
+.title {font-size: 20px; font-weight: 700;}
+.big-title { font-size: 24px; font-weight: 700;}
+.sub-title { font-size: 16px; font-weight: 700;}
+.label { font-size: 14px;}
+
+.button {background-color: #108CCA; font-size: 18px; font-weight: 700; border-radius: 4px; padding: 6px 30px; transition: all 0.3s; color: white; cursor: pointer;}
+.button.disable {cursor: default; opacity: 0.5;}
+.button:hover {opacity: 0.7;}
+
+.scroll-y { padding-right: 5px; overflow-y: auto; overflow-x: hidden;}
+.scroll-x { padding-bottom: 5px; overflow-x: auto; overflow-y: hidden;}
+.scroll::-webkit-scrollbar { width: 6px; height: 3px; }
+.scroll::-webkit-scrollbar-track { background: #DCDEDF; }
+.scroll::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.8); }
+.scroll::-webkit-scrollbar-thumb:hover { background: #BBB; }
+
+@media (orientation: portrait) {
+	.mobile .top-shadow {height: 30px;}
+}

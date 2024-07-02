@@ -1,0 +1,67 @@
+
+.start-temp {flex-direction: column;}
+.start-temp * {letter-spacing: -0.2px;}
+.start-temp .main-title {font-size: 32px; font-family: mainLight; margin-left: 150px;}
+.start-temp .content-wrapper {flex: 1;}
+.start-temp .content .type-line {display: flex;}
+.start-temp .content .type-line .type-title {width: 190px; padding-top: 70px; text-transform: uppercase; font-size: 30px; font-family: mainLight;}
+.start-temp .content .type-title div {font-size: 22px;}
+.start-temp .content .type-line .type-content {flex: 1;}
+.start-temp .content .type-line .type-content {align-items: flex-end;}
+.start-temp .content .type-line .part-item {width: 250px; margin: 10px;}
+.start-temp .content .type-line .part-item .part-img {margin: 20px auto; cursor: pointer;}
+.start-temp .content .type-line.custom-line .part-item .part-img {width: 120px;}
+.start-temp .content .type-line.premade-line .part-item .part-img {width: 230px;}
+.start-temp .content .type-line .part-item .part-img img {opacity: 0.9; transition: all 0.3s;}
+/* width: 100%;  */
+.start-temp .content .type-line .part-item:hover .part-img img {transform: scale(1.1); opacity: 1;}
+
+.start-temp .content .type-line .part-item .part-text {flex-direction: column;}
+.start-temp .content .type-line .part-item .part-text * {font-family: mainLight; font-size: 18px;}
+.start-temp .content .type-line .part-item .part-text .part-title {white-space: nowrap;}
+.start-temp .content .type-line .part-item .part-text .main-label {font-family: mainFont;}
+/* .start-temp .content .type-line .part-item .part-description {height: 120px;} */
+
+.small-scale .start-temp .main-title {font-size: 26px;}
+.small-scale .start-temp .content .type-line .type-title {width: 160px; padding-top: 50px; font-size: 24px;}
+.small-scale .start-temp .content .type-title div {font-size: 18px;}
+.small-scale .start-temp .content .type-line .part-item {width: 200px; margin: 10px;}
+.small-scale .start-temp .content .type-line .part-item .part-img {margin: 15px auto; cursor: pointer;}
+.small-scale .start-temp .content .type-line.custom-line .part-item {margin: 30px;}
+.small-scale .start-temp .content .type-line.custom-line .part-item .part-img {width: 90px;}
+.small-scale .start-temp .content .type-line.proto-line .part-item {margin: 30px;}
+.small-scale .start-temp .content .type-line.premade-line .part-item .part-img {width: 180px;}
+
+.small-scale .start-temp .content .type-line .part-item .part-text * {font-size: 14px;}
+
+.mobile .start-temp .content {display: flex; width: 100%; height: calc(100% - 50px); } /* display: flex; align-items: center; justify-content: center; */
+.mobile .start-temp .main-title {font-size: 28px; font-weight: 700; margin-top: 5px; margin-left: 0;}
+.mobile .start-temp .type-line {flex: 1; position: relative; margin: 10px; margin-top: 20px; border-radius: 20px; border: 3px solid #108CCA;}
+.mobile .start-temp .type-line .type-title {position: absolute; z-index: 1; top: -16px; left: -15px; background-color: white; padding: 0px 12px; width: inherit; font-size: 20px;}
+.mobile .start-temp .content-wrapper{height: 100%; width: 200px; position: absolute; top: 0; left: 0; overflow: hidden;} /* width:250px */
+.mobile .start-temp .content .type-content {position: absolute; height: 100%; transition: all 0.5s; align-items: center;}
+.mobile .start-temp .content .type-line .part-item {margin: 5px 10px; width: 190px;}
+.mobile .start-temp .content .type-line .part-item .part-img {margin: 5px auto; margin-bottom: 0; width: 190px;}
+.mobile .start-temp .content .type-line .part-item .part-text * {font-size: 12px;}
+.mobile .start-temp .content .type-line .part-item .part-text div {display: flex; justify-content: center;}
+
+.mobile.iPad .start-temp .content .type-line .type-title {font-size: 22px; font-weight: 700;}
+.mobile.iPad .start-temp .content .type-line .part-item .part-text * {font-size: 16px;}
+.mobile.iPad .start-temp .content-wrapper {width: 300px;}
+.mobile.iPad .start-temp .content .type-line .part-item {width: 280px;}
+
+.mobile .select-arrow {position: absolute; width: 16px;}
+.mobile .select-arrow.disable {opacity: 0.5;}
+.mobile .select-arrow.arrow-back {left: 10px;}
+.mobile .select-arrow.arrow-next {right: 10px; transform: rotate(180deg);}
+
+@media (orientation: portrait) {
+	.mobile .start-temp .content{flex-direction: column;}
+	.mobile .start-temp .main-title {margin-right: 30px;}
+}
+
+@media (orientation: landscape) {
+	.mobile.iPad .start-temp .main-title {margin-top: 20px;}
+	.mobile.iPad .start-temp .content .type-line {margin: 30px 10px;}
+	.mobile.iPad .start-temp .content .type-line .part-item .part-img {margin: 50px auto; width: 280px;}
+}
